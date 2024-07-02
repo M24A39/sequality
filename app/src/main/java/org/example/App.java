@@ -8,24 +8,39 @@ public class App {
     return "Hello World!";
   }
 
-  public static void main(String[] args) {
-    System.out.println(new App().getGreeting());
+  public String kadai1() {
     int sum = new Calculate().sum(2, 3);
-    System.out.println("Sum of 2 and 3 is " + sum + ".Average is " + sum / 2.0 + ".");
-    int sum1 = 0;
+    String kadai1 = "Sum of 2 and 3 is " + sum + ". Average is " + sum / 2.0 + ".";
+    return kadai1;
+  }
+
+  public String kadai2() {
+    int sum = 0;
     for (int i = 1; i < 11; i++) {
-      sum1 = sum1 + i;
+      sum = new Calculate().sum(sum, i);
     }
-    System.out.println("Sum of 1 to 10 is " + sum1 + ".Average is " + sum1 / 10.0 + ".");
+    String kadai2 = "Sum of 1 to 10 is " + sum + ". Average is " + sum / 10.0 + ".";
+    return kadai2;
+  }
+
+  public String kadai3() {
+    int sum1 = 0;
     int sum2 = 0;
-    int sum3 = 0;
     for (int i = 1; i < 11; i++) {
       if (i % 2 == 0) {
-        sum2 = sum2 + i;
+        sum2 = new Calculate().sum(sum2, i);
       } else {
-        sum3 = sum3 + i;
+        sum1 = new Calculate().sum(sum1, i);
       }
     }
-    System.out.println("Sum of odd of 1 to 10 is " + sum3 + ".Sum of even is " + sum2 + ".");
+    String kadai3 = "Sum of odd of 1 to 10 is " + sum1 + ". Sum of even is " + sum2 + ".";
+    return kadai3;
+  }
+
+  public static void main(String[] args) {
+    System.out.println(new App().getGreeting());
+    System.out.println(new App().kadai1());
+    System.out.println(new App().kadai2());
+    System.out.println(new App().kadai3());
   }
 }
